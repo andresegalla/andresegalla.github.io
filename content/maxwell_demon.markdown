@@ -7,9 +7,9 @@ Lang: pt-br
 # Introdução
 *O quê um demônio tem a ver com entropia e informação?*
 
-**Entropia** é um dos conceitos mais fascinantes e controversos da ciência.
+**Entropia** é um dos conceitos mais fascinantes, complexos e controversos da ciência.
  Ela surge na Física, no século 19 (ref), com o 
-objetivo de entender o limite de eficiência de máquinas térmicas, que foi crucial na Revolução Industrial.
+objetivo de entender o limite de eficiência de máquinas térmicas, essencial no contexto da Revolução Industrial.
 Mais tarde, no século 20, uma nova grandeza é batizada
 como entropia: Claude Shannon queria entender qual é o limite
 de compressão de uma informação para que sua transmissão ocorra
@@ -56,18 +56,31 @@ Em termodinâmica, a variação da entropia de um  sistema com temperatura $T$ p
 
 $$dS = \frac{\delta Q_{rev}}{T},$$
 
-onde $\delta Q_{rev}$ é o calor trocado com o ambiente de forma *reversível*. Em termodinâmica um processo reversível é uma sequência de estados de equilíbrio.
+onde $\delta Q_{rev}$ é o calor trocado com o ambiente de forma *reversível*. Reversível aqui significa que todos os estados intermediários do sistema no processo são *estados de equilíbrio*. Um estado de equilíbrio, por sua vez, é uma estado cujas variáveis termodinâmicas não variam com o tempo. Na prática, processos reais podem se aproximar de processos reversíveis tipicamente se forem executados de maneira lenta suficiente, mas nunca serão de fato reversíveis.
+Com a fórmula acima e a primeira lei da termodinâmica pode-se determinar a entropia de um sistema (ou sua variação) para diversas situações. Com isso, podemos enunciar a **segunda lei da termodinâmica** da seguinte maneira: Dado um sistema **isolado**, i.e., que não interage com um ambiente externo, **sua entropia não decresce**:
 
+$$\Delta S \geq 0,$$
+
+que é equivalente a dizer que podem ocorrer 2 coisas: ou ela não muda, que é o caso para sistemas em equilíbrio, ou ela cresce, que é o caso de sistemas fora do equilíbrio.
+
+Só para ilustrar que a segunda lei é compatível com a definição de entropia termodinâmica e está de acordo com nossa intuição a respeito de temperaturas, suponha que um sistema isolado seja composto por 2 corpos, um com temperatura $T_1$ e o outro com temperatura $T_2$, onde $T_1 \geq T_2$, e que esses corpos estejam em contato e possam consequentemente trocar calor. O quê acontecerá com suas temperaturas com o passar do tempo? É evidente que o calor irá fluir do corpo mais quente ($T_1$) para o mais frio ($T_2$) até que ambos corpos eventualmente atinjam uma mesma temperatura intermediária de equilíbrio $T_3$, onde $T_1 \geq T_3 \geq T_2$.
+
+
+$$dS = dS_1 + dS_2 = \frac{\delta Q_1}{T_1} + \frac{\delta Q_2}{T_2},$$
+
+onde usamos apenas a aditividade da entropia e sua definição. Como $T_1 \geq T_2$, o calor flui de 1 pra 2 e temos que $\delta Q_2 \geq 0$, $\delta Q_1 \leq 0$ e ainda que $\delta Q_1 = - \delta Q_2$. Substituindo na equação acima, obtemos:
+
+$$dS = \delta Q_2 \underbrace{ \left ( -\frac{1}{T_1} +  \frac{1}{T_2}\right )}_{\geq 0} \geq 0.$$
 
 # Mecânica Estatística: A Entropia segundo Boltzmann e Gibbs
 
 
-A Mecânica Estatística é a área da Física que tenta explicar sistemas termodinâmicos (descritos por variáveis macroscópicas) a partir do ponto de vista microscópico: *Como propriedades macroscópicas de sistemas termodinâmicos emergem a partir de variáveis microscópicas*? Como já mencionado, exemplos de variáveis macroscópicas típicas são *pressão* e *temperatura*, já exemplos de variáveis microscópicas são *posição*, *velocidade*, *massa* das partículas.
+A Mecânica Estatística é a área da Física que tenta explicar sistemas termodinâmicos (descritos por variáveis macroscópicas) a partir do ponto de vista microscópico: *Como propriedades macroscópicas de sistemas termodinâmicos emergem a partir de propriedades microscópicas*? Como já mencionado, exemplos de variáveis macroscópicas típicas são *pressão* e *temperatura*, já exemplos de variáveis microscópicas são *posição*, *velocidade*, *massa* das partículas.
 
 Um resultado importante, por exemplo, é que *temperatura está diretamente associada à velocidade das partículas* que compõem o sistema: quanto maior a temperatura de um sistema, maior a velocidade média de suas partículas. 
 
 A pressão, por outro lado, se dá através das colisões entre as partículas do gás e as parades do recipiente. 
-Quanto maior a temperatura, mais rápidas são as partículas em média e consequentemente maior é a força que exercem sobre as parades do recipiente, o quê significa uma maior pressão, uma vez que pressão é definida por força sobre área. 
+Quanto maior a temperatura, mais rápidas são as partículas em média e consequentemente maior é a força que exercem sobre as parades do recipiente quando colidem, o quê significa uma maior pressão, uma vez que **pressão é definida como força sobre área**. 
 
 Já a energia interna de um sistema termodinâmico é simplesmente a soma das energias de cada partícula, tipicamente cinética e potencial. 
 
@@ -77,15 +90,15 @@ E a **entropia**? Como ela pode ser compreendida do ponto de vista microscópico
 
 $$S = k \log \Omega,$$
 
-onde $k$ é uma constante de proporcionalidade, chamada de **constante de Boltzmann** e $\Omega$ representa o número de estados microscópicos acessíveis ao sistema. Importante ressaltar que essa definição é válida para sistemas *isolados*, ou seja, sistemas que não trocam energia com seu ambiente, tendo ela portanto conservada. Para ilustrar, vamos supor um gás ideal, cujas partículas podemos essencialmente imaginar como "bolinhas" com massa sujeitas às Leis de Newton da Mecânica Clássica e que não interagem entre si (uma aproximação boa para altas temperaturas). Cada cada partícula possui posição e momento (massa x velocidade) a cada instante de tempo e **o conjunto de posições e momentos de todas partículas do gás num determinado instante é justamente o estado microscópico do sistema**. $\Omega$ é portanto o *número de possíveis combinações de posições e momentos* que as partículas podem assumir de modo que a energia total seja conservada.
+onde $k$ é uma constante de proporcionalidade, chamada de **constante de Boltzmann** e $\Omega$ representa o *número de estados microscópicos acessíveis ao sistema*. Importante ressaltar que essa definição é válida para sistemas *isolados*, ou seja, sistemas que não trocam energia com seu ambiente, tendo ela portanto conservada. Para ilustrar, vamos supor um gás ideal, cujas partículas podemos essencialmente imaginar como "bolinhas" com massa sujeitas às Leis de Newton da Mecânica Clássica e que não interagem entre si (uma aproximação boa para altas temperaturas). Cada cada partícula possui posição e momento (massa x velocidade) a cada instante de tempo e **o conjunto de posições e momentos de todas partículas do gás num determinado instante é justamente o estado microscópico do sistema**. $\Omega$ é portanto o *número de possíveis combinações de posições e momentos* que as partículas podem assumir de modo que a energia total seja conservada, dada por um valor fixo $E$.
 
-É importante ressaltar que a definição de entropia por Boltzman pressupõe que *todos os estados acessíveis ao sistema sejam equiprováveis*. Ou seja, para um sistema com $\Omega$ estados acessíveis, cada estado tem probabilidade de $1/\Omega$ de ocorrer. 
+É importante ressaltar que a definição de entropia por Boltzman pressupõe que *todos os estados acessíveis ao sistema sejam equiprováveis*, fato conhecido como *postulado fundamental da mecânica estatística*. Ou seja, para um sistema com $\Omega$ estados acessíveis, cada estado tem probabilidade de $1/\Omega$ de ocorrer. 
 
- *Gibbs* generalizou a noção de entropia de Boltzman para o caso dos estados do sistema não serem necessariamente equiprováveis. Se indexarmos cada estado por um índice $i$, e denotarmos a *probabilidade do estado $i$* por $p_i$ onde $i=1,...,\Omega$, então a **entropia de Gibbs** é dada por:
+ *Gibbs* generalizou a noção de entropia de Boltzman para o caso dos estados do sistema não serem necessariamente equiprováveis. Se indexarmos cada estado por um índice $i$, e denotarmos a *probabilidade do estado $i$* ocorrer por $p_i$ onde $i=1,...,\Omega$, então a **entropia de Gibbs** é dada por:
 
 $$S = -k\sum_{i=1}^{\Omega}p_i\log p_i.$$
 
-Note que para $p_i=1/\Omega$ e lembrando que $\sum_{i}p_i=1$, obtemos novamente a entropia de Boltzmann.
+Note que para $p_i=1/\Omega$ e lembrando que $\sum_{i}p_i=1$, obtemos novamente a entropia de Boltzmann. 
 
 # A Entropia de Shannon
 
